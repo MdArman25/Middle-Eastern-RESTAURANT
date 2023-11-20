@@ -28,7 +28,7 @@ const Category = () => {
                 modules={[Pagination]}
                 className="mySwiper mb-24"
             >
-                <SwiperSlide>
+                <SwiperSlide className="animate-pulse">
                     <img src={slide1} alt="" />
                     <h3 className="text-4xl uppercase text-center -mt-16 text-white">Salads</h3>
                 </SwiperSlide>

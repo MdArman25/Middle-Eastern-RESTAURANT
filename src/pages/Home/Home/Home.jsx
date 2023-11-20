@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import Featured from "../Featured/Featured";
@@ -7,6 +8,7 @@ import Testimonials from "../Testimonials/Testimonials";
 const Home = () => {
     return (
         <div>
+               <Toaster></Toaster>
             <Banner></Banner>
             <Category></Category>
             <PopularMenu></PopularMenu>
