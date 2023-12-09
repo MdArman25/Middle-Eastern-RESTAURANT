@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import useAxios from "../../../Hooks/useAxios";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import BackToTop from "../../../Hooks/usetop";
 
 const ManageItems = () => {
   const [menu, , refetch] = useMenu();
@@ -101,6 +102,7 @@ const ManageItems = () => {
           </table>
         </div>
       </div>
+      <BackToTop></BackToTop>
     </div>
   );
 };

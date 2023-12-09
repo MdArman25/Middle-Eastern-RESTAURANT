@@ -20,17 +20,23 @@ const Dashboard = () => {
   const [users] =useUsers()
 
 
-  const [isAdmin] = useAdmin();
+  const [isAdmin,isAdminLoading] = useAdmin();
   // const isAdmin =true
-  console.log(isAdmin);
+  console.log(isAdminLoading);
+
+  if (isAdminLoading) {
+    // Display a loading indicator while isAdmin data is being fetched
+    return <div>Loading...</div>;
+  }
+  console.log(isAdminLoading,isAdmin);
   return (
     <div className="flex">
       {/* dashboard side bar */}
       <div className="w-64 min-h-screen bg-orange-400">
         <ul className="menu p-4">
-          {isAdmin ? (
+          {isAdmin?.isAdmin ? (
             <div>
-              {" "}
+   
               <li>
                 <NavLink to="/dashboard/AdminHome">
                   <FaHome></FaHome>

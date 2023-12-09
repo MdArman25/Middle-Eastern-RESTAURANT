@@ -16,7 +16,7 @@ const SignUp = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const { createUser, updateUserProfile,logOut } = Context();
+  const { createUser, updateUserProfile, logOut } = Context();
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
@@ -28,9 +28,9 @@ const SignUp = () => {
         .then(() => {
           console.log("user profile info updated");
           logOut()
-          .then(() => {})
-          .catch((error) => console.log(error));
-       
+            .then(() => {})
+            .catch((error) => console.log(error));
+
           reset();
           const userInfo = {
             name: data.name,
@@ -65,7 +65,7 @@ const SignUp = () => {
   return (
     <>
       <Helmet>
-        <title>Bistro Boss | Sign Up</title>
+        <title>Middle Eastern || Sign Up</title>
       </Helmet>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">

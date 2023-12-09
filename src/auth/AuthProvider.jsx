@@ -11,14 +11,14 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import auth from "../Firebase/firebase.consfig";
+
 import useAxiosPublic from "../Hooks/useAxiosPublic";
+import { auth } from "../Firebase/firebase.config";
 
 // import { axiosSecure } from "../Hooks/useAxios";
 
 // import axios from "axios";
-// import auth from './Firebase.config';
-// import auth from '../Firebase/Firebase';
+
 
 export const AuthContext = createContext(null);
 
@@ -61,25 +61,16 @@ const AuthProvider = ({ children }) => {
       setUser(User);
       console.log("Curent user", User);
 
-
       if (User) {
-        AxiosPublic
-          .post(
-            "/jwt",
-            loggedUser
-          
-          )
-          .then((res) => {
-            // console.log("token response", res.data);
-          });
+        AxiosPublic.post("/jwt", loggedUser).then((res) => {
+          // console.log("token response", res.data);
+        });
       } else {
-        AxiosPublic
-          .post("/logout", loggedUser, {
-            withCredentials: true,
-          })
-          .then((res) => {
-            // console.log("logout",res.data);
-          });
+        AxiosPublic.post("/logout", loggedUser, {
+          withCredentials: true,
+        }).then((res) => {
+          // console.log("logout",res.data);
+        });
       }
       setLoading(false);
     });

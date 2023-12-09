@@ -4,6 +4,7 @@ import useAxios from "../../../Hooks/useAxios";
 import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useUsers from "../../../Hooks/useUsers";
+import BackToTop from "../../../Hooks/usetop";
 
 const Users = () => {
   const axiosSecure = useAxios();
@@ -107,6 +108,7 @@ const Users = () => {
           </tbody>
         </table>
       </div>
+      <BackToTop></BackToTop>
     </div>
   );
 };

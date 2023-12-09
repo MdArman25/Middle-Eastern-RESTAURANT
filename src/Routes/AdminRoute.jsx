@@ -5,8 +5,8 @@ import { Navigate, useLocation } from "react-router-dom";
 
 const AdminRoute = ({children}) => {
   const { user, loading } = Context();
-  const [isAdmin,isAdminLoading]=useAdmin()
   const location = useLocation();
+  const [isAdmin,isAdminLoading]=useAdmin()
   console.log(location);
   if (loading||isAdminLoading)
     return (
@@ -22,7 +22,7 @@ const AdminRoute = ({children}) => {
       </div>
     );
 
-  if (user && isAdmin) {
+  if (user && isAdmin.isAdmin) {
       return children;
 }
 return <Navigate to="/" state={location.pathname} replace  />;

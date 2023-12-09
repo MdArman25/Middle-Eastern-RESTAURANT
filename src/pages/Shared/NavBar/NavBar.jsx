@@ -37,7 +37,7 @@ const NavBar = () => {
         <NavLink to={"/contact_us"}>CONTACT US</NavLink>
       </li>
       <li>
-        <NavLink to={"/dashboard"}>DASHBOARD</NavLink>
+        <NavLink to={"dashboard"}>DASHBOARD</NavLink>
       </li>
       <li>
         <NavLink to={"/our_menu"}>OUR MENU</NavLink>
@@ -98,7 +98,7 @@ const NavBar = () => {
             </ul>
           </div>
           <div className="">
-            <a className="btn  btn-ghost normal-case text-xl">Bistro Boss</a>
+            <a className="btn  btn-ghost normal-case text-xl">Middle Eastern</a>
 
             <p className="uppercase text-xl font-bold -mt-2 pl-2">Restaurant</p>
           </div>

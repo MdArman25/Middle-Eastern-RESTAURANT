@@ -5,6 +5,8 @@ import { FaUtensils } from "react-icons/fa";
 import Swal from "sweetalert2";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import useAxios from "../../Hooks/useAxios";
+import BackToTop from "../../Hooks/usetop";
+import axios from "axios";
 // import useAxiosPublic from "../../Hooks/useAxiosPublic";
 // import axios from "axios";
 
@@ -19,8 +21,8 @@ const AddItems = () => {
   const onSubmit = async (data) => {
     console.log(data.image);
     // image upload to imgbb and then get an url
-    const image = { image: data.image[0] };
-    console.log(image);
+    // const image = { image: data.image[0] };
+    // console.log(image);
     // const formData = new FormData()
     // formData.append('image', image)
     // console.log(image);
@@ -142,6 +144,7 @@ const AddItems = () => {
           </button>
         </form>
       </div>
+      <BackToTop></BackToTop>
     </div>
   );
 };

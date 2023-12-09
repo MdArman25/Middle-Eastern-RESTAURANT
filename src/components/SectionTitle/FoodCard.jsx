@@ -54,27 +54,23 @@ const FoodCard = ({ item }) => {
   };
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl text-center">
-        <p className="bg-gray-600 w-10 rounded absolute text-white right-10 top-1 ">
-          {price}
-        </p>
-        <figure>
-          <img src={image} alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title  mx-auto">{name}</h2>
-          <p>{recipe}</p>
-          <div className="card-actions justify-center">
-            <button
-              onClick={() => handleAddCart(item)}
-              style={{ borderRadius: "8px" }}
-              className="btn btn-ghost border-b-[#BB8506] text-[#BB8506] bg-[#E8E8E8] "
-            >
-              ADD TO CART
-            </button>
-          </div>
+        <div className="mt-10">
+            {
+                tittle&& <Cover img={img} tittle={tittle}></Cover> 
+            }
+            <div className="grid md:grid-cols-2 gap-10">
+                {
+                    items?.map(item => <MenuItem
+                        key={item._id}
+                        item={item}
+                    ></MenuItem>)
+                }
+                <br />
+                <Link to={`/shop/${tittle}`}>
+                    <button className="btn btn-outline border-0 border-b-4 mt-4">ORDER YOUR FAVOURITE FOOD </button>
+                </Link>
+            </div>
         </div>
-      </div>
     </div>
   );
 };
