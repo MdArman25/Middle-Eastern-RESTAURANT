@@ -16,11 +16,10 @@ import useCart from "../../Hooks/useCart";
 import useUsers from "../../Hooks/useUsers";
 import useAdmin from "../../Hooks/useAdmin";
 const Dashboard = () => {
-  const [data,refetch] = useCart();
-  const [users] =useUsers()
+  const [data, refetch] = useCart();
+  const [users] = useUsers();
 
-
-  const [isAdmin,isAdminLoading] = useAdmin();
+  const [isAdmin, isAdminLoading] = useAdmin();
   // const isAdmin =true
   console.log(isAdminLoading);
 
@@ -28,7 +27,7 @@ const Dashboard = () => {
     // Display a loading indicator while isAdmin data is being fetched
     return <div>Loading...</div>;
   }
-  console.log(isAdminLoading,isAdmin);
+  console.log(isAdminLoading, isAdmin);
   return (
     <div className="flex">
       {/* dashboard side bar */}
@@ -36,7 +35,6 @@ const Dashboard = () => {
         <ul className="menu p-4">
           {isAdmin?.isAdmin ? (
             <div>
-   
               <li>
                 <NavLink to="/dashboard/AdminHome">
                   <FaHome></FaHome>
@@ -54,7 +52,6 @@ const Dashboard = () => {
                   <FaList></FaList>
                   Manage Items
                 </NavLink>
-            
               </li>
               <li>
                 <NavLink to="/dashboard/Booking">
@@ -66,7 +63,6 @@ const Dashboard = () => {
                 <NavLink to="/dashboard/Users">
                   <FaUser></FaUser>
                   All Users ({users?.length})
-                  
                 </NavLink>
               </li>
             </div>
@@ -94,9 +90,8 @@ const Dashboard = () => {
               <li>
                 <NavLink to="/dashboard/Payment-History">
                   <FaHistory></FaHistory>
-                  Payment History 
+                  Payment History
                 </NavLink>
-             
               </li>
               <li>
                 <NavLink to="/dashboard/review">
